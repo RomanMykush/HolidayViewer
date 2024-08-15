@@ -6,7 +6,7 @@ import { AsyncPipe } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CountryInfoService } from '../../shared/services/country-info.service';
+import { CountryService } from '../../shared/services/country.service';
 import { Country } from '../../shared/models/country';
 import { Router } from '@angular/router';
 
@@ -30,7 +30,7 @@ export class SearchBarComponent implements OnInit {
   filteredOptions$ = new Observable<Country[]>();
 
   constructor(
-    private countryInfoService: CountryInfoService,
+    private countryInfoService: CountryService,
     private router: Router
   ) {}
 

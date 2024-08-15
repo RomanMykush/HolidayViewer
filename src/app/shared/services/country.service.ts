@@ -8,7 +8,7 @@ import { Country } from '../models/country';
 @Injectable({
   providedIn: 'root',
 })
-export class CountryInfoService {
+export class CountryService {
   countryInfos$ = new BehaviorSubject<Country[]>([]);
 
   readonly getAllEndpoint = '/api/v3/AvailableCountries';
@@ -17,8 +17,6 @@ export class CountryInfoService {
   constructor(private http: HttpClient) {
     this.fetchCountryInfos().subscribe(countries => {
       this.countryInfos$.next(countries);
-
-      console.log(countries);
     });
   }
 
