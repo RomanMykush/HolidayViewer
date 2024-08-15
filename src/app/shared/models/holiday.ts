@@ -8,7 +8,8 @@ export class Holiday {
     public countryCode: boolean,
     public fixed: boolean,
     public global: boolean,
-    public counties: string[],
+    public counties: string[] | null,
+    public launchYear: number | null,
     public types: HolidayTypes[]
   ) {}
 }
