@@ -2,8 +2,8 @@ export class CountryInfo {
   constructor(
     public countryCode: string,
     public commonName: string,
-    public officialName: string | null,
-    public region: string | null,
-    public borders: string[] | null
+    public officialName: string,
+    public region: string,
+    public borders: string[]
   ) {}
 }

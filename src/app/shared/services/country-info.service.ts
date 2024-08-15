@@ -3,12 +3,13 @@ import { CountryInfo } from '../models/country-info';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Country } from '../models/country';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CountryInfoService {
-  countryInfos$ = new BehaviorSubject<CountryInfo[]>([]);
+  countryInfos$ = new BehaviorSubject<Country[]>([]);
 
   readonly getAllEndpoint = '/api/v3/AvailableCountries';
   readonly getEndpoint = '/api/v3/CountryInfo/';
@@ -16,21 +17,15 @@ export class CountryInfoService {
   constructor(private http: HttpClient) {
     this.fetchCountryInfos().subscribe(countries => {
       this.countryInfos$.next(countries);
+
+      console.log(countries);
     });
   }
 
-  private fetchCountryInfos(): Observable<CountryInfo[]> {
-    return this.http
-      .get<
-        { countryCode: string; name: string }[]
-      >(`${environment.apiUrl}${this.getAllEndpoint}`)
-      .pipe(
-        map(res => {
-          return res.map(c => {
-            return new CountryInfo(c.countryCode, c.name, null, null, null);
-          });
-        })
-      );
+  private fetchCountryInfos(): Observable<Country[]> {
+    return this.http.get<Country[]>(
+      `${environment.apiUrl}${this.getAllEndpoint}`
+    );
   }
 
   fetchFullCountryInfo(countryCode: string): Observable<CountryInfo> {
