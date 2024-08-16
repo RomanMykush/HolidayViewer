@@ -1,0 +1,19 @@
+<div class="d-flex flex-column gap-3 m-5">
+  <h2 class="d-flex justify-content-center">
+    {{ country?.officialName }}
+  </h2>
+
+  <div class="d-flex justify-content-center">
+    @for (year of range(2020, 2030); track year) {
+      <button
+        type="button"
+        class="btn mx-1"
+        [ngClass]="
+          year === selectedYear ? 'btn-primary' : 'btn-outline-primary'
+        "
+        (click)="selectedYear = year">
+        {{ year }}
+      </button>
+    }
+  </div>
+</div>
