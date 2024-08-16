@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://date.nager.at',
+  apiUrl: process.env['API_URL'] || 'https://date.nager.at',
 };
