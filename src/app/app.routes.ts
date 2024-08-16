@@ -5,4 +5,5 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'countries/:code', component: CountryDetailsComponent },
+  { path: '**', pathMatch: 'full', redirectTo: '' },
 ];
