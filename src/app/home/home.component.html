@@ -1,3 +1,10 @@
-<div class="m-5">
+<div class="d-flex flex-column gap-4 m-5">
   <app-search-bar class="d-flex justify-content-center" />
+
+  <h3 class="d-flex justify-content-center">Upcoming events</h3>
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    @for (code of countryCodes; track code) {
+      <app-next-holiday class="next-holiday-card" [countryCode]="code" />
+    }
+  </div>
 </div>

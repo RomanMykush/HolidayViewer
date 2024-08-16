@@ -1,0 +1,11 @@
+<mat-card appearance="outlined">
+  <!-- Country name -->
+  <mat-card-header class="h4 mb-3">{{ country?.officialName }}</mat-card-header>
+  <!-- Holiday details -->
+  <mat-card-content class="d-flex justify-content-between">
+    <h5 class="mb-0">{{ holiday?.name }}</h5>
+    <!-- Spacer -->
+    <div style="min-width: 20px"></div>
+    <p class="mb-0">{{ holiday?.date | date }}</p>
+  </mat-card-content>
+</mat-card>
