@@ -5,11 +5,12 @@ import { HolidayService } from '../../shared/services/holiday.service';
 import { Holiday } from '../../shared/models/holiday';
 import { MatCardModule } from '@angular/material/card';
 import { DatePipe } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-next-holiday',
   standalone: true,
-  imports: [MatCardModule, DatePipe],
+  imports: [MatCardModule, DatePipe, RouterModule],
   templateUrl: './next-holiday.component.html',
 })
 export class NextHolidayComponent implements OnInit {
