@@ -3,11 +3,11 @@
     {{ country?.officialName }}
   </h2>
 
-  <div class="d-flex justify-content-center">
+  <div class="d-flex flex-wrap justify-content-center gap-2">
     @for (year of range(2020, 2030); track year) {
       <button
         type="button"
-        class="btn mx-1"
+        class="btn"
         [ngClass]="
           year === selectedYear ? 'btn-primary' : 'btn-outline-primary'
         "
