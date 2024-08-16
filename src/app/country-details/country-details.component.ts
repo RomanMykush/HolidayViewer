@@ -3,11 +3,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { CountryService } from '../shared/services/country.service';
 import { CountryInfo } from '../shared/models/country-info';
 import { NgClass } from '@angular/common';
+import { HolidayListComponent } from './holiday-list/holiday-list.component';
 
 @Component({
   selector: 'app-country-details',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, HolidayListComponent],
   templateUrl: './country-details.component.html',
 })
 export class CountryDetailsComponent implements OnInit {
