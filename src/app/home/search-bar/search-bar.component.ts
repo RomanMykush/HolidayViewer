@@ -30,12 +30,12 @@ export class SearchBarComponent implements OnInit {
   filteredOptions$ = new Observable<Country[]>();
 
   constructor(
-    private countryInfoService: CountryService,
+    private countryService: CountryService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.countryInfoService.countryInfos$.subscribe(
+    this.countryService.countryInfos$.subscribe(
       countries => (this.options = countries)
     );
 

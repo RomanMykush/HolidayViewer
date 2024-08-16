@@ -11,8 +11,8 @@ import { Country } from '../models/country';
 export class CountryService {
   countryInfos$ = new BehaviorSubject<Country[]>([]);
 
-  readonly getAllEndpoint = '/api/v3/AvailableCountries';
-  readonly getEndpoint = '/api/v3/CountryInfo/';
+  private readonly getAllEndpoint = '/api/v3/AvailableCountries';
+  private readonly getEndpoint = '/api/v3/CountryInfo/';
 
   constructor(private http: HttpClient) {
     this.fetchCountryInfos().subscribe(countries => {

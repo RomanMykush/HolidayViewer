@@ -18,7 +18,7 @@ export class CountryDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private countryInfoService: CountryService
+    private countryService: CountryService
   ) {}
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class CountryDetailsComponent implements OnInit {
       this.country = null;
       this.selectedYear = new Date().getFullYear();
 
-      this.countryInfoService
+      this.countryService
         .fetchFullCountryInfo(this.countryCode)
         .subscribe(res => {
           this.country = res;

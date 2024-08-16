@@ -9,8 +9,8 @@ import { HolidayTypes } from '../enums/holiday-type';
   providedIn: 'root',
 })
 export class HolidayService {
-  readonly getAllEndpoint = '/api/v3/PublicHolidays/';
-  readonly getAllNextEndpoint = '/api/v3/NextPublicHolidays/';
+  private readonly getAllEndpoint = '/api/v3/PublicHolidays/';
+  private readonly getAllNextEndpoint = '/api/v3/NextPublicHolidays/';
 
   constructor(private http: HttpClient) {}
 
