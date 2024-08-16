@@ -2,28 +2,23 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Holiday } from '../models/holiday';
 import { map, Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
 import { HolidayTypes } from '../enums/holiday-type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HolidayService {
-  private readonly getAllEndpoint = '/api/v3/PublicHolidays/';
-  private readonly getAllNextEndpoint = '/api/v3/NextPublicHolidays/';
+  private readonly getAllEndpoint = 'api/v3/PublicHolidays';
+  private readonly getAllNextEndpoint = 'api/v3/NextPublicHolidays';
 
   constructor(private http: HttpClient) {}
 
   fetchHolidays(year: number, countryCode: string): Observable<Holiday[]> {
-    return this.requestData(
-      `${environment.apiUrl}${this.getAllEndpoint}${year}/${countryCode}`
-    );
+    return this.requestData(`${this.getAllEndpoint}/${year}/${countryCode}`);
   }
 
   fetchNextHolidays(countryCode: string): Observable<Holiday[]> {
-    return this.requestData(
-      `${environment.apiUrl}${this.getAllNextEndpoint}${countryCode}`
-    );
+    return this.requestData(`${this.getAllNextEndpoint}/${countryCode}`);
   }
 
   private requestData(url: string): Observable<Holiday[]> {

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CountryInfo } from '../models/country-info';
 import { BehaviorSubject, map, Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Country } from '../models/country';
 
@@ -11,8 +10,8 @@ import { Country } from '../models/country';
 export class CountryService {
   countryInfos$ = new BehaviorSubject<Country[]>([]);
 
-  private readonly getAllEndpoint = '/api/v3/AvailableCountries';
-  private readonly getEndpoint = '/api/v3/CountryInfo/';
+  private readonly getAllEndpoint = 'api/v3/AvailableCountries';
+  private readonly getEndpoint = 'api/v3/CountryInfo';
 
   constructor(private http: HttpClient) {
     this.fetchCountryInfos().subscribe(countries => {
@@ -21,9 +20,7 @@ export class CountryService {
   }
 
   private fetchCountryInfos(): Observable<Country[]> {
-    return this.http.get<Country[]>(
-      `${environment.apiUrl}${this.getAllEndpoint}`
-    );
+    return this.http.get<Country[]>(this.getAllEndpoint);
   }
 
   fetchFullCountryInfo(countryCode: string): Observable<CountryInfo> {
@@ -34,7 +31,7 @@ export class CountryService {
         officialName: string;
         region: string;
         borders: { countryCode: string }[];
-      }>(`${environment.apiUrl}${this.getEndpoint}${countryCode}`)
+      }>(`${this.getEndpoint}/${countryCode}`)
       .pipe(
         map(res => {
           return new CountryInfo(
