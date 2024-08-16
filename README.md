@@ -1,27 +1,26 @@
 # HolidayViewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+## Running and building
 
-## Development server
+In order to run or build a project, you must:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Install [Nodejs](https://nodejs.org/en)
+2. Install latest version of Angular CLI. To do this, run the following command in your terminal: `npm install -g @angular/cli`
 
-## Code scaffolding
+To run project on development server, execute `ng serve` and navigate to `http://localhost:4200/`. To build project run `ng build`. The build artifacts will be stored in the `dist/` directory.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+This application includes 2 pages:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Home page with country search bar and 3 cards about upcoming event in random countries.
+2. Country details page with a list of holidays in that country during the selected year.
 
-## Running unit tests
+## Used libraries
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+During the development of this project, the following additional libraries were used:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. [Angular Material UI](https://material.angular.io)
+2. [Bootstrap](https://getbootstrap.com)
+3. [ESLint](https://eslint.org)
+4. [Prettier](https://prettier.io)
