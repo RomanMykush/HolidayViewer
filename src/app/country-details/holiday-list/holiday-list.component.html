@@ -17,6 +17,16 @@
     <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
   </ng-container>
 
+  <!-- Type Column -->
+  <ng-container matColumnDef="types">
+    <th mat-header-cell *matHeaderCellDef>Types</th>
+    <td mat-cell *matCellDef="let element">
+      @for (type of element.types; track type) {
+        <app-holiday-type-icon [type]="type" />
+      }
+    </td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

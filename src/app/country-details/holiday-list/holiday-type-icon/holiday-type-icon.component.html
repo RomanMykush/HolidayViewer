@@ -1,0 +1,21 @@
+@switch (type) {
+  @case (holidayTypes.Public) {
+    <mat-icon matTooltip="Public">public</mat-icon>
+  }
+  @case (holidayTypes.Bank) {
+    <mat-icon matTooltip="Bank">account_balance</mat-icon>
+  }
+  @case (holidayTypes.School) {
+    <mat-icon matTooltip="School">school</mat-icon>
+  }
+  @case (holidayTypes.Authorities) {
+    <mat-icon matTooltip="Authorities">gavel</mat-icon>
+  }
+  @case (holidayTypes.Optional) {
+    <mat-icon matTooltip="Optional">add_box</mat-icon>
+  }
+  @case (holidayTypes.Observance) {
+    <mat-icon matTooltip="Observance">priority_high</mat-icon>
+  }
+  @default {}
+}
